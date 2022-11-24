@@ -1,0 +1,114 @@
+<br><center><h1> <p style="color:white" font-family: Courier New, monospace ><i>e-shoping</i></p></h1></center>
+<br>
+<br>
+<div class="row row-cols-1 row-cols-md-3 g-0.200">
+  <div class="col">
+    <div class="card h-100">
+      <img src="https://static7.depositphotos.com/1000998/743/i/450/depositphotos_7434643-stock-photo-shop-window-with-the-shoes.jpg" class="card-img-top" alt="Image" height="300" width="300">
+      <div class="card-body">
+        <h5 class="card-title"><h1><i>chaussure</i></h1></h5>
+        <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+      </div>
+      <div class="card-footer">
+        <a href="#" class="btn btn-primary">Voir nos articles</a>
+      </div>
+    </div>
+  </div>
+  <div class="col">
+    <div class="card h-100">
+      <img src="https://st2.depositphotos.com/1220004/5603/i/600/depositphotos_56033011-stock-photo-winter-jackets-for-sale-at.jpg" class="card-img-top" alt="Image" height="300" width="300">
+      <div class="card-body">
+        <h5 class="card-title"><h1><i>veste</i></h1></h5>
+        <p class="card-text">This card has supporting text below as a natural lead-in to additional content.</p>
+      </div>
+      <div class="card-footer">
+        <a href="#" class="btn btn-primary">Voir nos articles</a>
+      </div>
+    </div>
+  </div>
+  <div class="col">
+    <div class="card h-100">
+      <img src="https://st2.depositphotos.com/5123557/9449/i/600/depositphotos_94496558-stock-photo-new-clothes-colorful-in-a.jpg" class="card-img-top" alt="Image" height="300" width="300">
+      <div class="card-body">
+        <h5 class="card-title"><h1><i>pantalon/survetement</i></h1></h5>
+        <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This card has even longer content than the first to show that equal height action.</p>
+      </div>
+      <div class="card-footer">
+        <a href="" class="btn btn-primary">voir nos articles</a>
+      </div>
+    </div>
+  </div>
+</div>
+<br>
+
+<div class="row row-cols-1 row-cols-md-3 g-0.200">
+  <div class="col">
+    <div class="card h-100">
+      <img src="https://st3.depositphotos.com/3604283/17031/i/600/depositphotos_170316848-stock-photo-still-life-with-mens-casual.jpg" class="card-img-top" alt="Image" height="300" width="300">
+      <div class="card-body">
+        <h5 class="card-title"><h1><i>accessoire</i></h1></h5>
+        <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+      </div>
+      <div class="card-footer">
+      <a><%= link_to 'Voir nos articles',  static_pages_secret_path, :class => "btn btn-primary", style: "color:white"  %></a>
+      </div>
+    </div>
+  </div>
+  <div class="col">
+    <div class="card h-100">
+      <img src="https://st3.depositphotos.com/19013846/34231/i/600/depositphotos_342316242-stock-photo-luxury-watches.jpg" class="card-img-top" alt="Image" height="300" width="300">
+      <div class="card-body">
+        <h5 class="card-title"><h1><i>montre</i></h1></h5>
+        <p class="card-text">This card has supporting text below as a natural lead-in to additional content.</p>
+      </div>
+      <div class="card-footer">
+        <a href="#" class="btn btn-primary">Voir nos articles</a>
+      </div>
+    </div>
+  </div>
+  <div class="col">
+    <div class="card h-100">
+      <img src="https://cdn.pixabay.com/photo/2017/07/22/11/46/adventure-2528477_1280.jpg" class="card-img-top" alt="Image" height="300" width="300">
+      <div class="card-body">
+        <h5 class="card-title"><h1><i>gadget</i></h1></h5>
+        <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This card has even longer content than the first to show that equal height action.</p>
+      </div>
+      <div class="card-footer">
+        <a href="#" class="btn btn-primary">Voir nos articles</a>
+    </div>
+  </div>
+</div>
+
+<br>
+<center>
+      <% if user_signed_in? %>
+        <li>
+          <i><%= link_to "Se déconnecter", destroy_user_session_path, style: "color:white", method: :delete %></i>
+        </li>
+
+        <li>
+          Voici ton email : <%= current_user.email %>
+        </li>
+
+        <li>
+         <i><%= link_to  "Nos abonments", static_pages_secret_path, style: "color:white"%></i>
+        </li>
+
+        <li>
+          <i><%= link_to "Edit email / password", edit_user_registration_path, style: "color:white" %></i>
+        </li>
+
+      <% else %>
+        <li>    
+         <i> <%= link_to "connexion", new_user_session_path, style: "color:white" %></i>
+        </li>
+
+        <li>
+          <i><%= link_to "S'inscrire", new_user_registration_path, style: "color:white"%></i>
+        </li>
+
+      <% end %>
+    </ul></center>
+   <%= button_to "Passer commande (NEXT GEN)", checkout_create_path(total:10 ), class: "btn btn-primary", remote: true %>
+    <footer class="footer font-small">
+    <a>
